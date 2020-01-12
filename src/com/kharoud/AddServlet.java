@@ -11,17 +11,42 @@ import javax.servlet.http.HttpServletResponse;
 
 public class AddServlet extends HttpServlet {
 	
-	public void doGet(HttpServletRequest req, HttpServletResponse res)
-			throws IOException, ServletException {
+	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		
 		int i = Integer.parseInt(req.getParameter("num1"));
 		int j = Integer.parseInt(req.getParameter("num2"));
 		
-		int sum = i + j;
+		int k = i + j;
+		PrintWriter out = res.getWriter();
+		out.println("result: "+k);
+		
+	    req.setAttribute("k", k);
+		
 		
 		RequestDispatcher rd = req.getRequestDispatcher("sq");
 		rd.forward(req, res);
 	}
 	
-
+	
+//	public void doGet(HttpServletRequest request, HttpServletResponse response)
+//			throws IOException{
+//		int i = Integer.parseInt(request.getParameter("num1"));
+//		int j = Integer.parseInt(request.getParameter("num2"));
+//		
+//		int sum = i + j;
+//		PrintWriter out =response.getWriter();
+//		out.println("result is: ");
+//			}
+//	
+//	public void doPost(HttpServletRequest request, HttpServletResponse response)
+//			throws IOException{
+//		int i = Integer.parseInt(request.getParameter("num1"));
+//		int j = Integer.parseInt(request.getParameter("num2"));
+//		
+//		int sum = i + j;
+//		PrintWriter out =response.getWriter();
+//		out.println("result is: ");
+//			}
+	
+	
 }

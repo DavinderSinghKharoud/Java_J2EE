@@ -12,12 +12,12 @@
   </servlet-mapping>
   
    <servlet>
-  <servlet-name>sq</servlet-name>
+  <servlet-name>square</servlet-name>
   <servlet-class>com.kharoud.SqServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  <servlet-name>sq</servlet-name>
+  <servlet-name>square</servlet-name>
   <url-pattern>/sq</url-pattern>
   </servlet-mapping>
 </web-app>
