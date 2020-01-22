@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -15,37 +16,15 @@ public class AddServlet extends HttpServlet {
 	
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		
-		int i = Integer.parseInt(req.getParameter("num1"));
-		int j = Integer.parseInt(req.getParameter("num2"));
+		PrintWriter out = res.getWriter();
 		
-	    int k = i+j;
-	    
-	    Cookie cookie = new Cookie("k", k+"");
-	    res.addCookie(cookie);
+		out.print("Hi</br>");
 		
-		res.sendRedirect("sq");
+		ServletContext ctx = getServletContext();
+		
+		String name = ctx.getInitParameter("name");
+		out.print(name);
+		
 	}
-	
-	
-//	public void doGet(HttpServletRequest request, HttpServletResponse response)
-//			throws IOException{
-//		int i = Integer.parseInt(request.getParameter("num1"));
-//		int j = Integer.parseInt(request.getParameter("num2"));
-//		
-//		int sum = i + j;
-//		PrintWriter out =response.getWriter();
-//		out.println("result is: ");
-//			}
-//	
-//	public void doPost(HttpServletRequest request, HttpServletResponse response)
-//			throws IOException{
-//		int i = Integer.parseInt(request.getParameter("num1"));
-//		int j = Integer.parseInt(request.getParameter("num2"));
-//		
-//		int sum = i + j;
-//		PrintWriter out =response.getWriter();
-//		out.println("result is: ");
-//			}
-	
 	
 }
