@@ -4,6 +4,12 @@
   <servlet>
   <servlet-name>addNumbers</servlet-name>
   <servlet-class>com.kharoud.AddServlet</servlet-class>
+  
+  <init-param>
+  <param-name>name</param-name>
+  <param-value>IndiviuallyServlet</param-value>
+  </init-param>
+  
   </servlet>
   
   <servlet-mapping>
@@ -21,8 +27,9 @@
   <url-pattern>/sq</url-pattern>
   </servlet-mapping>
   
+
   <context-param>
-<param-name>name</param-name>
+<param-name>name1</param-name>
 <param-value>Davinder Singh</param-value>
   </context-param>
   
