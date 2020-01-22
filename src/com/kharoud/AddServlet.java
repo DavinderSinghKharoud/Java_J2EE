@@ -26,7 +26,7 @@ public class AddServlet extends HttpServlet {
 //		RequestDispatcher rd = req.getRequestDispatcher("sq");
 //		rd.forward(req, res);
 		
-		res.sendRedirect("sq");
+		res.sendRedirect("sq?k="+k);
 	}
 	
 	
