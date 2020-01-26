@@ -10,9 +10,11 @@
 </head>
 <body>
 
-<c:set var="str" value="Hello"/>
+<c:set var="str" value="Hel lo"/>
 
-length: ${fn:length(str)}
+<c:forEach items="${fn:split(str,' ') }" var="s">
+${s }
+</c:forEach>
 
 </body>
 </html>
