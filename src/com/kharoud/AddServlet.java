@@ -18,19 +18,17 @@ import javax.servlet.http.HttpSession;
 import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 
-@WebServlet("/demo")
+@WebServlet("/addAlien")
 public class AddServlet extends HttpServlet {
 	
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		
+		PrintWriter out = res.getWriter();
 		
-		java.util.List<Student> studs = Arrays.asList(new Student(1, "Sunny"),
-				new Student(2, "Kharoud"));
+		int aid = Integer.parseInt( req.getParameter("aid"));
+		String aname= req.getParameter("aname");
 		
-		
-		req.setAttribute("student", studs);
-		
-		req.getRequestDispatcher("index.jsp").forward(req, res);
+		out.print("Name: "+aname);
 	}
 	
 }

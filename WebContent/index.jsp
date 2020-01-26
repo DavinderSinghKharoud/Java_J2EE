@@ -9,12 +9,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<c:set var="str" value="Hel lo"/>
-
-<c:if test="${fn:endsWith(str,'o') }">
-Ends with o.
-</c:if>
+<form action="addAlien">
+	<input type="text" name="aid"/><br>
+	<input type="text" name="aname"/><br>
+	<input type="submit"/>
+	
+	
+	</form>
 
 </body>
 </html>
