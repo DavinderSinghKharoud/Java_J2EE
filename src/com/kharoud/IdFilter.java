@@ -41,8 +41,8 @@ public class IdFilter implements Filter {
 		HttpServletRequest httpServletRequest = (HttpServletRequest)request;
 
 		int aid = Integer.parseInt( httpServletRequest.getParameter("aid"));
-		
-		if( aid > 1) {
+		String aname= httpServletRequest.getParameter("aname");
+		if( aname.length()>3 && aid>1) {
 			
 		chain.doFilter(request, response);
 		}else {
