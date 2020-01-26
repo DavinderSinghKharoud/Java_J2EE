@@ -1,6 +1,8 @@
 package com.kharoud;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,17 +17,23 @@ public class Login extends HttpServlet {
 	
 	String uname = request.getParameter("uname");
 	String pass = request.getParameter("pass");
+
+	LoginDao dao = new LoginDao();
 	
-	if( uname.equals("Sunny") && pass.equals("kharoud")) {
-		HttpSession session = request.getSession();
-		session.setAttribute("username", uname);
-		
-		response.sendRedirect("welcome.jsp");
-	}else {
-		
-		response.sendRedirect("login.jsp");
-	}
+	try {
+		if( dao.check("Sunny", "1234")) {
+			HttpSession session = request.getSession();
+			session.setAttribute("username", uname);
+			
+			response.sendRedirect("welcome.jsp");
+		}else {
+			
+			response.sendRedirect("login.jsp");
+		}
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 	}
 
 	
-}
+}}
