@@ -13,6 +13,9 @@
    if(session.getAttribute("username") == null){
    response.sendRedirect("login.jsp");
    }%>
-Welcome Page
+   
+Welcome ${username}
+
+<a href="videos.jsp">Videos Here</a>
 </body>
 </html>

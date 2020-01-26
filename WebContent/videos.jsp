@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<%
+   if(session.getAttribute("username") == null){
+   response.sendRedirect("login.jsp");
+   }%>
+https://www.youtube.com/watch?v=OuBUUkQfBYM&t=11198s
 </body>
 </html>
