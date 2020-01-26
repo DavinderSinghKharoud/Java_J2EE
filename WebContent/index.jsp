@@ -12,7 +12,7 @@
 
 <c:set var="str" value="Hel lo"/>
 
-index: ${fn:indexOf(str,"l") }
+index: ${fn:contains(str,"l") }
 
 </body>
 </html>
