@@ -8,12 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-${name}
+${student.name}
 
-.<%String name = (String)request.getAttribute("name"); %>
-<%= name%>
-<c:forEach var="i" begin="1" end="5" step="1">
-<c:out value="${i}"/><br/>
-</c:forEach>
 </body>
 </html>

@@ -20,14 +20,12 @@ public class AddServlet extends HttpServlet {
 	
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		
-		String name = "Sunny";
 		
-		req.setAttribute("name", "value");
-//		RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
-//		dispatcher.forward(req, res);
+	    Student st = new Student(101, "sunny");
 		
-		req.setAttribute("name", "value");
-		req.getRequestDispatcher("page.jsp").forward(req, res);
+		req.setAttribute("student", st);
+		
+		req.getRequestDispatcher("index.jsp").forward(req, res);
 	}
 	
 }
