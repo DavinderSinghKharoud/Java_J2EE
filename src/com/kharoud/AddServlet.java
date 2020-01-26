@@ -15,23 +15,19 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-@WebServlet("/add")
+@WebServlet("/demo")
 public class AddServlet extends HttpServlet {
 	
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		
-		PrintWriter out = res.getWriter();
+		String name = "Sunny";
 		
-		out.print("Hi ");
-//		
-//		ServletContext ctx = getServletContext();
-//		
-//		String name = ctx.getInitParameter("name");
+		req.setAttribute("name", "value");
+//		RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
+//		dispatcher.forward(req, res);
 		
-		ServletConfig config = getServletConfig();
-		String name = config.getInitParameter("name");
-		out.print(name);
-		
+		req.setAttribute("name", "value");
+		req.getRequestDispatcher("page.jsp").forward(req, res);
 	}
 	
 }
