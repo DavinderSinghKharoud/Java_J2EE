@@ -12,7 +12,9 @@
 
 <c:set var="str" value="Hel lo"/>
 
-index: ${fn:contains(str,"l") }
+<c:if test="${fn:contains(str,'l') }">
+L is there
+</c:if>
 
 </body>
 </html>
