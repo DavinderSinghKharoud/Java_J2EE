@@ -12,8 +12,8 @@
 
 <c:set var="str" value="Hel lo"/>
 
-<c:if test="${fn:contains(str,'l') }">
-L is there
+<c:if test="${fn:endsWith(str,'o') }">
+Ends with o.
 </c:if>
 
 </body>
