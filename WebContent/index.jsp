@@ -12,9 +12,7 @@
 
 <c:set var="str" value="Hel lo"/>
 
-<c:forEach items="${fn:split(str,' ') }" var="s">
-${s }
-</c:forEach>
+index: ${fn:indexOf(str,"l") }
 
 </body>
 </html>
